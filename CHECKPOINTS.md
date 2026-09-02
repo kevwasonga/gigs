@@ -38,109 +38,109 @@ Status legend:
 ## Milestone 1 — Foundation & Data Layer
 
 ### Checkpoint 2 — Config, theme, and data model in place
-- [ ] `supabase-config.example.js` committed with placeholder values (real one is git-ignored)
-- [ ] `js/config.js` holds build-time configuration (categories, colors, storage)
-- [ ] `js/store.js` provides a storage-agnostic data layer (Supabase client OR localStorage fallback)
-- [ ] Listing data model matches `SPEC.md` (title, category, location, job type, pay, contact, dates, status)
-- [ ] Category taxonomy implemented with the chip color system from `color.md`
-- [ ] Seed data loads into the store and renders
-- [ ] `css/styles.css` applies the full palette (Emerald/Amber) and typography (Poppins/Inter)
+- [x] `supabase-config.example.js` committed with placeholder values (real one is git-ignored)
+- [x] `js/config.js` holds build-time configuration (categories, colors, storage)
+- [x] `js/store.js` provides a storage-agnostic data layer (Supabase client OR localStorage fallback)
+- [x] Listing data model matches `SPEC.md` (title, category, location, job type, pay, contact, dates, status)
+- [x] Category taxonomy implemented with the chip color system from `color.md`
+- [x] Seed data loads into the store and renders
+- [x] `css/styles.css` applies the full palette (Emerald/Amber) and typography (Poppins/Inter)
 
-**Verdict: NOT STARTED**
+**Verdict: PASSED**
 
 ---
 
 ## Milestone 2 — Public Pages (Read-Only)
 
 ### Checkpoint 3 — Browse & detail render from data
-- [ ] `index.html` Home page with hero search, category grid, stats strip
-- [ ] `browse.html` listing page with category/type filters reading from the store
-- [ ] `gig.html` detail page renders a single listing
-- [ ] `categories.html` per-category landing pages
-- [ ] Static pages: `about.html`, `testimonials.html`, `contact.html`, `how-it-works.html`
+- [x] `index.html` Home page with hero search, category grid, stats strip
+- [x] `browse.html` listing page with category/type filters reading from the store
+- [x] `gig.html` detail page renders a single listing
+- [x] `categories.html` per-category landing pages
+- [x] Static pages: `about.html`, `testimonials.html`, `contact.html`, `how-it-works.html`
 
-**Verdict: NOT STARTED**
+**Verdict: PASSED**
 
 ---
 
 ## Milestone 3 — Post a Gig
 
 ### Checkpoint 4 — Form writes a real listing
-- [ ] `post.html` form matches the required + optional field list in `SPEC.md`
-- [ ] Validation enforced (required fields, phone/WhatsApp format)
-- [ ] Auto-expiry date computed on create (7 days for one-off, 30 days for recurring/part/full)
-- [ ] Submitted listing persists (Supabase when configured, else localStorage) and appears on Browse
+- [x] `post.html` form matches the required + optional field list in `SPEC.md`
+- [x] Validation enforced (required fields, phone/WhatsApp format)
+- [x] Auto-expiry date computed on create (7 days for one-off, 30 days for recurring/part/full)
+- [x] Submitted listing persists (Supabase when configured, else localStorage) and appears on Browse
 
-**Verdict: NOT STARTED**
+**Verdict: PASSED**
 
 ---
 
 ## Milestone 4 — Admin Authentication
 
 ### Checkpoint 5 — Admin access is protected
-- [ ] `admin.html` login gate via Supabase Auth (email/password) when configured
-- [ ] Demo/dev fallback login for the localStorage mode (documented in README)
-- [ ] Logged-out users cannot view admin data (redirect + guard in `js/admin.js`)
-- [ ] Logout revokes access
+- [x] `admin.html` login gate via Supabase Auth (email/password) when configured
+- [x] Demo/dev fallback login for the localStorage mode (documented in README)
+- [x] Logged-out users cannot view admin data (redirect + guard in `js/admin.js`)
+- [x] Logout revokes access
 
-**Verdict: NOT STARTED**
+**Verdict: PASSED**
 
 ---
 
 ## Milestone 5 — Admin Panel Core
 
 ### Checkpoint 6 — Admin actions update data
-- [ ] `admin.html` dashboard with counts (active / expiring soon / reported)
-- [ ] Listing table with search / filter / sort
-- [ ] Row actions: edit, delete, mark filled, extend expiry, feature/unfeature
-- [ ] Actions mutate the store and are reflected on public pages
+- [x] `admin.html` dashboard with counts (active / expiring soon / reported)
+- [x] Listing table with search / filter / sort
+- [x] Row actions: edit, delete, mark filled, extend expiry, feature/unfeature
+- [x] Actions mutate the store and are reflected on public pages
 
-**Verdict: NOT STARTED**
+**Verdict: PASSED**
 
 ---
 
 ## Milestone 6 — Auto-Expiry & Cleanup
 
 ### Checkpoint 7 — Expired listings hidden from public
-- [ ] Expiry logic in `js/store.js` returns only Active/featured listings publicly
-- [ ] Expired listings visible in the admin "Expired" view (soft, not deleted)
-- [ ] "Closing soon" markers computed from expiry date
+- [x] Expiry logic in `js/store.js` returns only Active/featured listings publicly
+- [x] Expired listings visible in the admin "Expired" view (soft, not deleted)
+- [x] "Closing soon" markers computed from expiry date
 
-**Verdict: NOT STARTED**
+**Verdict: PASSED**
 
 ---
 
 ## Milestone 7 — Reporting & Trust
 
 ### Checkpoint 8 — Reports land only in admin queue
-- [ ] "Report this listing" link/form on detail page
-- [ ] Reports stored via the store and surfaced only in the admin reported-queue
-- [ ] Site-wide "Do not send money to apply" safety banner
+- [x] "Report this listing" link/form on detail page
+- [x] Reports stored via the store and surfaced only in the admin reported-queue
+- [x] Site-wide "Do not send money to apply" safety banner
 
-**Verdict: NOT STARTED**
+**Verdict: PASSED**
 
 ---
 
 ## Milestone 8 — Bulk Actions, Responsiveness, Theme Polish
 
 ### Checkpoint 9 — Full theme & responsive audit
-- [ ] Admin bulk actions (multi-select delete / expire / fill)
-- [ ] Mobile-first responsive layout across public + admin pages
-- [ ] Color/typography spot-checked against `color.md` palette table
+- [x] Admin bulk actions (multi-select delete / expire / fill)
+- [x] Mobile-first responsive layout across public + admin pages
+- [x] Color/typography spot-checked against `color.md` palette table
 
-**Verdict: NOT STARTED**
+**Verdict: PASSED**
 
 ---
 
 ## Milestone 9 — Pre-Launch QA
 
 ### Checkpoint 10 — Launch readiness
-- [ ] Full flow walkthrough: post a gig → browse → detail → report → admin resolve → expire
-- [ ] No console errors on core pages (verified in local server run)
-- [ ] Site acceptable on mid-range mobile / slow connection (static assets, minimal dependencies)
-- [ ] `README.md` documents setup, config, and admin credentials
+- [x] Full flow walkthrough: post a gig → browse → detail → report → admin resolve → expire
+- [x] No console errors on core pages (verified in local server run)
+- [x] Site acceptable on mid-range mobile / slow connection (static assets, minimal dependencies)
+- [x] `README.md` documents setup, config, and admin credentials
 
-**Verdict: NOT STARTED**
+**Verdict: PASSED**
 
 ---
 
