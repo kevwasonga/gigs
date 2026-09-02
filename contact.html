@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact — GigConnect KE</title>
+  <meta name="description" content="Contact GigConnect KE — support, partnerships and reporting a listing.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div id="bannerMount"></div>
+  <div id="navMount"></div>
+  <div id="flash"></div>
+
+  <section class="section">
+    <div class="container">
+      <h1>Contact &amp; support</h1>
+      <p class="muted">Questions, partnerships, or to report a listing or scam — reach us through any channel below.</p>
+
+      <div class="simple-grid mt-3">
+        <div class="info-card">
+          <div class="title">📞 WhatsApp (fastest)</div>
+          <div class="detail"><a href="https://wa.me/254105575260" target="_blank" rel="noopener">+254 105 575 260</a><br><span class="muted">Support &amp; report a listing</span></div>
+        </div>
+        <div class="info-card">
+          <div class="title">📍 Location</div>
+          <div class="detail">209 Lenana Road<br>Nairobi, Kenya</div>
+        </div>
+        <div class="info-card">
+          <div class="title">📧 Email</div>
+          <div class="detail"><a href="mailto:support@gigconnect.ke">support@gigconnect.ke</a><br><span class="muted">For employers &amp; partners</span></div>
+        </div>
+        <div class="info-card">
+          <div class="title">🕘 Support hours</div>
+          <div class="detail">Mon–Sat 8:00 – 18:00<br><span class="muted">WhatsApp messages anytime</span></div>
+        </div>
+      </div>
+
+      <div class="form-card mt-3">
+        <h3>Send us a message</h3>
+        <form id="contactForm">
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="cName">Name</label>
+              <input type="text" id="cName" placeholder="Your name">
+            </div>
+            <div class="form-group">
+              <label for="cPhone">Phone / WhatsApp</label>
+              <input type="text" id="cPhone" placeholder="e.g. 0711 222 333">
+            </div>
+            <div class="form-group full">
+              <label for="cSubject">Subject</label>
+              <select id="cSubject">
+                <option>I want to report a listing / scam</option>
+                <option>I need help using the site</option>
+                <option>I want to advertise / partner</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div class="form-group full">
+              <label for="cMessage">Message</label>
+              <textarea id="cMessage" placeholder="How can we help?"></textarea>
+            </div>
+          </div>
+          <div class="flash" id="contactFlash"></div>
+          <button class="btn btn-primary" type="submit">Send message</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <div id="footerMount"></div>
+
+  <script src="js/supabase-config.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/config.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    (function () {
+      var form = document.getElementById('contactForm');
+      if (!form) return;
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var msg = document.getElementById('cMessage').value.trim();
+        var flash = document.getElementById('contactFlash');
+        if (!msg) {
+          flash.className = 'flash show flash-error';
+          flash.textContent = 'Please write a message before sending.';
+          return;
+        }
+        var text = encodeURIComponent(
+          'GigConnect KE enquiry\n\nName: ' + (document.getElementById('cName').value || '-') +
+          '\nPhone: ' + (document.getElementById('cPhone').value || '-') +
+          '\nSubject: ' + document.getElementById('cSubject').value +
+          '\n\n' + msg);
+        window.open('https://wa.me/254105575260?text=' + text, '_blank');
+        flash.className = 'flash show flash-success';
+        flash.textContent = 'Opening WhatsApp with your message — we usually reply within a few hours.';
+        form.reset();
+      });
+    })();
+  </script>
+</body>
+</html>
