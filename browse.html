@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Browse Gigs — GigConnect KE</title>
+  <meta name="description" content="Browse local gigs and jobs across Kenya by category, job type and location.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div id="bannerMount"></div>
+  <div id="navMount"></div>
+  <div id="flash"></div>
+
+  <section class="section">
+    <div class="container">
+      <h1>Browse gigs</h1>
+      <p class="muted">Filter by category, job type and location. Contact posters directly via WhatsApp or phone.</p>
+
+      <div class="filters">
+        <form id="filterForm" class="filter-row">
+          <div>
+            <label for="fSearch">Keyword</label>
+            <input type="text" id="fSearch" placeholder="Search gigs…">
+          </div>
+          <div>
+            <label for="fCategory">Category</label>
+            <select id="fCategory"><option value="">All</option></select>
+          </div>
+          <div>
+            <label for="fType">Job type</label>
+            <select id="fType"><option value="">All</option></select>
+          </div>
+          <div>
+            <label for="fLocation">Location</label>
+            <input type="text" id="fLocation" placeholder="e.g. Nairobi">
+          </div>
+          <div style="display:flex;align-items:flex-end">
+            <button class="btn btn-primary" type="submit" style="flex:1">Apply filters</button>
+          </div>
+        </form>
+      </div>
+
+      <div class="section-head">
+        <h2 id="resultTitle">All gigs</h2>
+        <span class="muted" id="resultCount"></span>
+      </div>
+      <div class="gig-grid" id="gigGrid"></div>
+      <div class="empty hidden" id="emptyState">No gigs match your filters. <a href="post.html">Post one</a> or clear your filters.</div>
+    </div>
+  </section>
+
+  <div id="footerMount"></div>
+
+  <script src="js/supabase-config.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/config.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/browse.js"></script>
+</body>
+</html>
