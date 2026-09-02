@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Admin — GigConnect KE</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div id="flash"></div>
+
+  <!-- Login view -->
+  <section id="loginView">
+    <div class="admin-login">
+      <h2 style="text-align:center">Admin login</h2>
+      <p class="muted" style="text-align:center;font-size:14px">Restricted area — authorised staff only.</p>
+      <form id="loginForm">
+        <div class="form-group">
+          <label for="aEmail">Email</label>
+          <input type="email" id="aEmail" required>
+        </div>
+        <div class="form-group">
+          <label for="aPass">Password</label>
+          <input type="password" id="aPass" required>
+        </div>
+        <div class="flash" id="loginFlash"></div>
+        <button class="btn btn-primary" type="submit" style="width:100%">Sign in</button>
+        <p class="help-text mt-2" id="demoHint"></p>
+      </form>
+      <p class="mt-2 text-center"><a href="index.html">← Back to site</a></p>
+    </div>
+  </section>
+
+  <!-- Dashboard view -->
+  <section id="dashView" class="hidden">
+    <header class="navbar"><div class="container navbar-inner">
+      <span class="brand">🛠️ Admin <span class="brand-badge">KE</span></span>
+      <button class="btn btn-ghost btn-sm" style="border-color:#fff;color:#fff" onclick="APP.Admin.logout()">Logout</button>
+    </div></header>
+
+    <div class="section"><div class="container">
+      <h1>Dashboard</h1>
+      <div class="count-cards">
+        <div class="count-card"><div class="num" id="countActive">–</div><div class="lbl">Active listings</div></div>
+        <div class="count-card"><div class="num" id="countTotal">–</div><div class="lbl">Total listings</div></div>
+        <div class="count-card"><div class="num" id="countExpiring">–</div><div class="lbl">Expiring in 48h</div></div>
+        <div class="count-card"><div class="num" id="countReports">–</div><div class="lbl">Open reports</div></div>
+      </div>
+
+      <div class="admin-tabs">
+        <a href="#" data-tab="active" class="active">Active</a>
+        <a href="#" data-tab="all">All</a>
+        <a href="#" data-tab="expired">Expired</a>
+        <a href="#" data-tab="filled">Filled</a>
+        <a href="#" data-tab="reports">Reports</a>
+      </div>
+
+      <div class="admin-toolbar">
+        <input type="text" id="adminSearch" placeholder="Search by title / contact / category" style="flex:1;min-width:200px;padding:10px 12px;border:1px solid var(--border);border-radius:8px">
+        <button class="btn btn-ghost btn-sm" onclick="APP.Admin.clearFilters()">Clear</button>
+        <button class="btn btn-danger btn-sm" id="bulkDelete" onclick="APP.Admin.bulkAction('delete')" disabled>Bulk delete</button>
+        <button class="btn btn-ghost btn-sm" id="bulkExpire" onclick="APP.Admin.bulkAction('expire')" disabled>Bulk expire</button>
+      </div>
+
+      <div class="table-wrap">
+        <table class="admin-table" id="adminTable">
+          <thead>
+            <tr>
+              <th><input type="checkbox" id="selectAll" onclick="APP.Admin.toggleAll(this)"></th>
+              <th>Title</th><th>Category</th><th>Location</th><th>Date posted</th><th>Expiry</th><th>Status</th><th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="adminTbody"></tbody>
+        </table>
+      </div>
+      <div class="empty hidden" id="adminEmpty">No listings in this view.</div>
+    </div></div>
+  </section>
+
+  <script src="js/supabase-config.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/config.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/admin.js"></script>
+</body>
+</html>
