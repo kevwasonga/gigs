@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Categories — GigConnect KE</title>
+  <meta name="description" content="Browse local gigs and jobs by category across Kenya.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div id="bannerMount"></div>
+  <div id="navMount"></div>
+  <div id="flash"></div>
+
+  <section class="section">
+    <div class="container">
+      <h1 id="pageTitle">All categories</h1>
+      <p class="muted">Pick a category to see matching gigs in your area.</p>
+
+      <div class="cat-grid mb-3" id="categoryIndex"></div>
+      <div id="categoryGigs" class="section-head" style="display:none"><h2 id="catHeading"></h2></div>
+      <div class="gig-grid" id="gigGrid"></div>
+      <div class="empty hidden" id="emptyState">No active gigs in this category right now. <a href="post.html">Be the first to post</a>.</div>
+    </div>
+  </section>
+
+  <div id="footerMount"></div>
+
+  <script src="js/supabase-config.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/config.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/categories.js"></script>
+</body>
+</html>
