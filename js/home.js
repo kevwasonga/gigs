@@ -4,6 +4,8 @@ window.APP = window.APP || {};
 (function () {
   'use strict';
 
+  var APP = window.APP;
+
   function renderCategories() {
     var grid = document.getElementById('categoryGrid');
     if (!grid) return;

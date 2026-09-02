@@ -8,6 +8,8 @@ window.APP = window.APP || {};
 (function () {
   'use strict';
 
+  var APP = window.APP;
+
   var NAV_ITEMS = [
     { href: 'index.html', label: 'Home', match: ['index.html'] },
     { href: 'browse.html', label: 'Browse Gigs', match: ['browse.html'] },

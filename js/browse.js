@@ -4,6 +4,8 @@ window.APP = window.APP || {};
 (function () {
   'use strict';
 
+  var APP = window.APP;
+
   var state = { q: '', cat: '', type: '', location: '' };
 
   function getParam(name) {

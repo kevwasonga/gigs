@@ -4,6 +4,8 @@ window.APP = window.APP || {};
 (function () {
   'use strict';
 
+  var APP = window.APP;
+
   var gigId = new URLSearchParams(window.location.search).get('id');
   var currentGig = null;
 

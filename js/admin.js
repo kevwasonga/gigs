@@ -9,6 +9,8 @@ window.APP = window.APP || {};
 (function () {
   'use strict';
 
+  var APP = window.APP;
+
   var DEMO_SESSION_KEY = 'gigconnect_admin_session';
   var tab = 'active';
   var selected = {};

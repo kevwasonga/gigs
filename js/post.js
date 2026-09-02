@@ -4,6 +4,8 @@ window.APP = window.APP || {};
 (function () {
   'use strict';
 
+  var APP = window.APP;
+
   function fillSelects() {
     var cat = document.getElementById('category');
     cat.innerHTML = window.APP.CATEGORIES.map(function (c) {

@@ -8,6 +8,8 @@ window.APP = window.APP || {};
 (function () {
   'use strict';
 
+  var APP = window.APP;
+
   var CATEGORIES = [
     { slug: 'house-help',      name: 'House Help & Domestic',      icon: '🏠', bg: '#E6F5F0', text: '#0F7A5E' },
     { slug: 'events',          name: 'Event Services',             icon: '🎉', bg: '#F9EAFB', text: '#8A2FA3' },

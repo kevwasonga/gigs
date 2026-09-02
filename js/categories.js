@@ -4,6 +4,8 @@ window.APP = window.APP || {};
 (function () {
   'use strict';
 
+  var APP = window.APP;
+
   var cat = new URLSearchParams(window.location.search).get('cat');
 
   function renderIndex() {

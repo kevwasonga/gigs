@@ -9,6 +9,8 @@ window.APP = window.APP || {};
 (function () {
   'use strict';
 
+  var APP = window.APP;
+
   var useSupabase = false;
 
   function mode() { return useSupabase ? 'supabase' : 'local'; }
