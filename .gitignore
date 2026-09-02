@@ -1,0 +1,36 @@
+# Dependencies
+node_modules/
+
+# Environment & secrets (Supabase keys must never be committed)
+.env
+.env.local
+.env.*.local
+js/supabase-config.js
+
+# Build output
+dist/
+build/
+out/
+.next/
+*.tsbuildinfo
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# OS junk
+.DS_Store
+Thumbs.db
+
+# Editor / IDE
+.vscode/
+.idea/
+*.swp
+
+# Local databases / temp
+*.sqlite
+*.sqlite3
+.tmp
