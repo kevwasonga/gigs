@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Post a Gig — GigConnect KE</title>
+  <meta name="description" content="Post a gig or job listing for free — house help, events, cleaning, driving, retail and more.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div id="bannerMount"></div>
+  <div id="navMount"></div>
+  <div id="flash"></div>
+
+  <section class="section">
+    <div class="container">
+      <h1>Post a gig</h1>
+      <p class="muted">Free and simple. Fill in the essentials — applications come to your phone/WhatsApp directly. Listings auto-expire: <strong>7 days</strong> for one-off gigs, <strong>30 days</strong> for recurring/part/full-time.</p>
+
+      <form class="form-card mt-2" id="gigForm">
+        <div class="form-grid">
+          <div class="form-group full">
+            <label for="title">Title <span class="form-required">*</span></label>
+            <input type="text" id="title" required placeholder="e.g. Need house help for 3 days this week">
+          </div>
+
+          <div class="form-group">
+            <label for="category">Category <span class="form-required">*</span></label>
+            <select id="category" required></select>
+          </div>
+
+          <div class="form-group">
+            <label for="location">Location (area/town) <span class="form-required">*</span></label>
+            <input type="text" id="location" required placeholder="e.g. Westlands, Nairobi">
+          </div>
+
+          <div class="form-group">
+            <label for="jobType">Job type <span class="form-required">*</span></label>
+            <select id="jobType" required></select>
+          </div>
+
+          <div class="form-group">
+            <label for="pay">Pay <span class="form-required">*</span></label>
+            <input type="text" id="pay" required placeholder="e.g. KSh 1,500/day or negotiable">
+          </div>
+
+          <div class="form-group">
+            <label for="contact">Phone / WhatsApp <span class="form-required">*</span></label>
+            <input type="text" id="contact" required placeholder="e.g. WhatsApp 0711 222 333">
+          </div>
+
+          <div class="form-group">
+            <label for="dateNeeded">Date needed <span class="form-required">*</span></label>
+            <input type="text" id="dateNeeded" required placeholder="e.g. This Saturday / ASAP">
+          </div>
+
+          <div class="form-group">
+            <label for="posterName">Your name / business <span class="form-required">*</span></label>
+            <input type="text" id="posterName" required placeholder="e.g. Jane M. or Wanjiru Events">
+          </div>
+
+          <div class="form-group">
+            <label for="peopleNeeded">Number of people needed</label>
+            <input type="number" id="peopleNeeded" min="1" placeholder="Optional">
+          </div>
+
+          <div class="form-group">
+            <label for="duration">Duration</label>
+            <input type="text" id="duration" placeholder="e.g. 3 days, 6 hours, ongoing">
+          </div>
+
+          <div class="form-group full">
+            <label for="description">Short description <span class="form-required">*</span></label>
+            <textarea id="description" required placeholder="2–4 sentences. What's the work, and what do you need?"></textarea>
+            <div class="hint">Keep it short — casual gigs need fast reading.</div>
+          </div>
+        </div>
+
+        <div class="flash" id="formFlash"></div>
+        <button class="btn btn-amber" type="submit" style="width:100%">Post gig for free</button>
+        <p class="help-text mt-2">By posting you agree your listing must not request upfront payment from applicants.</p>
+      </form>
+    </div>
+  </section>
+
+  <div id="footerMount"></div>
+
+  <script src="js/supabase-config.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/config.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/post.js"></script>
+</body>
+</html>
