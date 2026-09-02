@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GigConnect KE — Local Gigs & Jobs in Kenya</title>
+  <meta name="description" content="Find and post local gigs and odd-jobs in Kenya — house help, events, cleaning, driving, retail and more. Fast, casual and WhatsApp-first.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div id="bannerMount"></div>
+  <div id="navMount"></div>
+  <div id="flash"></div>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <h1>Find work. Post a gig. Get it done.</h1>
+      <p>Local gigs & odd-jobs across Kenya — house help, events, cleaning, driving, retail and more. No CV required, connect via WhatsApp.</p>
+      <div class="hero-actions">
+        <a class="btn btn-amber" href="post.html">＋ Post a Gig (Free)</a>
+        <a class="btn btn-secondary" href="browse.html">Find Work</a>
+      </div>
+      <form class="search-bar" id="searchForm">
+        <input type="text" id="searchQ" placeholder="Keyword, e.g. 'cashier' or 'house help'">
+        <select id="searchCat" aria-label="Category">
+          <option value="">All categories</option>
+        </select>
+        <button class="btn btn-primary" type="submit">Search</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Stats -->
+  <section class="stats">
+    <div class="container">
+      <div class="stats-grid">
+        <div><div class="stat-num" id="statTotal">–</div><div class="stat-label">Gigs posted</div></div>
+        <div><div class="stat-num" id="statActive">–</div><div class="stat-label">Open right now</div></div>
+        <div><div class="stat-num">12</div><div class="stat-label">Hiring employers</div></div>
+        <div><div class="stat-num">340+</div><div class="stat-label">Placements made</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <h2>🔥 Featured &amp; urgent gigs</h2>
+        <a href="browse.html">View all →</a>
+      </div>
+      <div class="gig-grid" id="featuredGrid"></div>
+    </div>
+  </section>
+
+  <!-- Categories -->
+  <section class="section section-alt">
+    <div class="container">
+      <div class="section-head">
+        <h2>Browse by category</h2>
+      </div>
+      <div class="cat-grid" id="categoryGrid"></div>
+    </div>
+  </section>
+
+  <!-- Recent -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <h2>Latest gigs</h2>
+        <a href="browse.html">Browse all →</a>
+      </div>
+      <div class="gig-grid" id="recentGrid"></div>
+    </div>
+  </section>
+
+  <div id="footerMount"></div>
+
+  <script src="js/supabase-config.js" onerror=""></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/config.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/home.js"></script>
+</body>
+</html>
